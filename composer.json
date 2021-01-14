@@ -1,0 +1,30 @@
+{
+    "name": "dutchcodingcompany/laravel-notes",
+    "description": "Laravel model notes.",
+    "keywords": [
+        "laravel",
+        "notes"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4.0",
+        "laravel/framework": "^6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DutchCodingCompany\\Notes\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\DutchCodingCompany\\Notes\\NoteServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
