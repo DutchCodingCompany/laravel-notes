@@ -24,10 +24,15 @@ class NoteServiceProvider extends ServiceProvider
      */
     protected function registerMigrations(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        $folder = 'class_based';
+        if (version_compare($this->app->version(), '8.38.0', '>=')) {
+            $folder = 'anonymous';
+        }
+
+        $this->loadMigrationsFrom(__DIR__ . '/../migrations/'.$folder);
 
         $this->publishes([
-            __DIR__ . '/../migrations' => database_path('migrations'),
+            __DIR__ . '/../migrations/'.$folder => database_path('migrations'),
         ], 'notes');
     }
 
